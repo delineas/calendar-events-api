@@ -13,8 +13,20 @@ use Src\Core\ExceptionHandler;
 $response = new Response;
 new ExceptionHandler($response);
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
+function is_local()
+{
+    if (
+        strpos($_SERVER['HTTP_HOST'], 'localhost') !== false
+        || substr($_SERVER['HTTP_HOST'], 0, 3) == '10.'
+        || substr($_SERVER['HTTP_HOST'], 0, 7) == '192.168'
+    ) return true;
+    return false;
+}
+
+if(is_local()) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+    $dotenv->load();
+}
 
 Container::add('response', $response);
 Container::add('calendarClient', (new CalendarClient)());

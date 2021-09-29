@@ -9,5 +9,10 @@
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
-  ]
+  ],
+  "env": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "true",
+    "GOOGLE_CALENDAR_PUBLIC_URL": "https://calendar.google.com/calendar/ical/ra11ir3rci72jikuf2gt3h3144%40group.calendar.google.com/private-c629bc3f17bf5ccc9e9f808539c9a277/basic.ics"
+  }
 }
