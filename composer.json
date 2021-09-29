@@ -1,0 +1,15 @@
+{
+    "name": "daniel/calendar-events-api",
+    "authors": [
+        {
+            "name": "Daniel Primo",
+            "email": "delineas@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Src\\": "src/"}
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
