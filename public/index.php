@@ -42,11 +42,11 @@ DELETE /expenses/{id}
 */
 
 $router->get(
-    '/next-event',
+    '/api/next-event',
     [CalendarController::class, 'nextEvent']
 );
 $router->get(
-    '/events-since/([0-9\-]+)',
+    '/api/events-since/([0-9\-]+)',
     [CalendarController::class, 'eventsByDateSince']
 );
 

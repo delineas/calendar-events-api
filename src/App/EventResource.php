@@ -7,7 +7,7 @@ class EventResource
     public static function toArray($event)
     {
         return [
-            'summary' => $event->summary,
+            'summary' => stripslashes($event->summary),
             'description' => $event->description,
             'start' => $event->dateStartTZ
         ];

@@ -26,7 +26,7 @@ Inicialmente la API REST debe cumplir estos requisitos:
 
 1. Descarga el repositorio
 2. Ejecuta `composer dump-autoload -o` para cargar 
-3. Ejecuta `php -S localhost:8080 -t public` para lanzar el servidor local
+3. Ejecuta `php -S localhost:8080 -t api/index.php` para lanzar el servidor local
 4. Opciona: Lanza `vercel` para comenzar el despliegue en la nube
 
 ## Aviso a navegantes

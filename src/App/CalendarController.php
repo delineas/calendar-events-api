@@ -17,7 +17,7 @@ class CalendarController
     public function nextEvent()
     {
         $events = $this->calendarClient->eventsByDateSince('today');
-        $nextEvent = (count($events) > 0) ? next($events) : null;
+        $nextEvent = (count($events) > 0) ? current($events) : null;
         return is_null($nextEvent) 
             ? $this->response->sendError('not found', 404) 
             : $this->response->sendMessage(EventResource::toArray($nextEvent[0]));
