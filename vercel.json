@@ -5,7 +5,8 @@
     }
   },
   "rewrites": [
-    { "source": "/api/next-event", "destination": "/api/index.php" }
+    { "source": "/api/next-event", "destination": "/api/index.php" },
+    { "source": "/api/events-since/(.*)", "destination": "/api/index.php" }
   ],
   "headers": [
     {

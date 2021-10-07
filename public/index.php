@@ -9,6 +9,7 @@ use Src\App\CalendarClient;
 use Src\App\CalendarController;
 use Src\Core\ExceptionHandler;
 
+date_default_timezone_set('Europe/Madrid');
 
 $response = new Response;
 new ExceptionHandler($response);
