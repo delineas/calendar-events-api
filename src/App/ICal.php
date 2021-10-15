@@ -1,5 +1,7 @@
 <?php
 
+// Copy from https://gist.github.com/seebz/c00a38d9520e035a6a8c
+
 namespace Src\App;
 
 class ICal
