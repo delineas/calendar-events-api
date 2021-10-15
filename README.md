@@ -25,9 +25,10 @@ Inicialmente la API REST debe cumplir estos requisitos:
 ## Instalación en local
 
 1. Descarga el repositorio
-2. Ejecuta `composer dump-autoload -o` para cargar 
-3. Ejecuta `php -S localhost:8080 -t api/index.php` para lanzar el servidor local
-4. Opciona: Lanza `vercel` para comenzar el despliegue en la nube
+2. Copia `.env.example` en `.env`y modifica el parámetro de la URL del calendario de Google ([Cómo se hace](https://support.google.com/calendar/answer/37648?hl=es#zippy=%2Cver-tu-calendario-solo-lectura))
+3. Ejecuta `composer dump-autoload -o` para cargar 
+4. Ejecuta `php -S localhost:8080 -t api/index.php` para lanzar el servidor local
+5. Opciona: Lanza `vercel` para comenzar el despliegue en la nube
 
 ## Aviso a navegantes
 
