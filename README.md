@@ -32,5 +32,4 @@ Inicialmente la API REST debe cumplir estos requisitos:
 
 ## Aviso a navegantes
 
-Este código es fruto de tres sesiones en vídeo creando el código. 
-Por desgracia no se añadieron puntos intermedios de control en el repositorio de código para ver el avance.
+El código está basado fuertemente en https://gist.github.com/seebz/c00a38d9520e035a6a8c
