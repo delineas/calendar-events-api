@@ -5,9 +5,8 @@ require __DIR__ . '/../vendor/autoload.php';
 use Src\Core\Router;
 use Src\Core\Response;
 use Src\Core\Container;
-use Src\App\CalendarClient;
-use Src\App\CalendarController;
 use Src\Core\ExceptionHandler;
+use Src\App\ExtractOembedController;
 
 date_default_timezone_set('Europe/Madrid');
 
@@ -30,45 +29,12 @@ if(is_local()) {
 }
 
 Container::add('response', $response);
-Container::add('calendarClient', (new CalendarClient)());
 
 $router = new Router;
 
-/*
-GET /expenses
-GET /expenses/{id}
-POST /expenses
-PUT /expenses/{id}
-DELETE /expenses/{id}
-*/
-
 $router->get(
-    '/api/next-event',
-    [CalendarController::class, 'nextEvent']
+    '/api/extract/(.*)',
+    [ExtractOembedController::class, 'extract']
 );
-$router->get(
-    '/api/events-since/([0-9\-]+)',
-    [CalendarController::class, 'eventsByDateSince']
-);
-
-// $router->get(
-//     '/expenses/([0-9]+)',
-//     [ExpenseController::class, 'getBy']
-// );
-
-// $router->post(
-//     '/expenses',
-//     [ExpenseController::class, 'store']
-// );
-
-// $router->put(
-//     '/expenses/([0-9]+)',
-//     [ExpenseController::class, 'update']
-// );
-
-// $router->delete(
-//     '/expenses/([0-9]+)',
-//     [ExpenseController::class, 'remove']
-// );
 
 $router->run();

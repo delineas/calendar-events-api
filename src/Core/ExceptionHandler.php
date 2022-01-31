@@ -23,7 +23,7 @@ class ExceptionHandler
     }
     
     public function handlerDefault($exception) {
-        return $this->response->sendError($exception->getMessage(), 500);
+        return $this->response->sendError($exception->getMessage(), 50);
     }
 
     public function handlerNotFoundException($exception) {

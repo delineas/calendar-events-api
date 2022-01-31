@@ -34,12 +34,31 @@ class Response {
     public function send() {
         header('Content-Type: application/json');
         header("Access-Control-Allow-Origin: *");
+        //$this->addAccessControlHeaders();
         header("Access-Control-Allow-Credentials: true");
         header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding");
         header("Access-Control-Allow-Methods: PUT, POST, GET, OPTIONS, DELETE");
         http_response_code($this->status);
         echo json_encode($this->message);
         die;
+    }
+
+    protected function addAccessControlHeaders() {
+        $possibleOrigins = explode(',', env('ALLOW_ORIGINS', '*'));
+
+        if (env('APP_ENV') == 'development') {
+            $possibleOrigins[] = 'https://localhost:8080';
+        }
+
+        if (in_array(Request::getOrigin(), $possibleOrigins)) {
+            $origin = Request::getOrigin();
+        } else {
+            $origin = 'https://example.com';
+        }
+
+        header("Access-Control-Allow-Origin: {$origin}");
+
+        return;
     }
 
 }

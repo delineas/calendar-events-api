@@ -1,5 +1,5 @@
 {
-    "name": "daniel/calendar-events-api",
+    "name": "daniel/oembed-share-api",
     "authors": [
         {
             "name": "Daniel Primo",
@@ -10,6 +10,7 @@
         "psr-4": {"Src\\": "src/"}
     },
     "require": {
-        "vlucas/phpdotenv": "^5.3"
+        "vlucas/phpdotenv": "^5.3",
+        "embed/embed": "^3.4"
     }
 }
