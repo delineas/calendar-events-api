@@ -50,6 +50,10 @@ $router->get(
     '/api/events-since/([0-9\-]+)',
     [CalendarController::class, 'eventsByDateSince']
 );
+$router->get(
+    '/api/next-events',
+    [CalendarController::class, 'eventsFuture']
+);
 
 // $router->get(
 //     '/expenses/([0-9]+)',

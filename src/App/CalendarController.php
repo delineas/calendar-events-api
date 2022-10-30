@@ -34,4 +34,17 @@ class CalendarController
                 }, $events)
             );
     }
+
+    public function eventsFuture()
+    {
+        $date = date('Y-m-d');
+        $events = $this->calendarClient->eventsByDateSince((string)$date);
+        return (count($events) < 1)
+            ? $this->response->sendError('not found', 404)
+            : $this->response->sendMessage(
+                array_map(function ($event) {
+                    return EventResource::toArray($event[0]);
+                }, $events)
+            );
+    }
 }

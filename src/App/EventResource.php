@@ -8,7 +8,7 @@ class EventResource
     {
         return [
             'summary' => stripslashes($event->summary),
-            'description' => $event->description,
+            'description' => '', //$event->description,
             'start' => $event->dateStartTZ
         ];
       }
